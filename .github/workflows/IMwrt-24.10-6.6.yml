@@ -47,8 +47,6 @@ on:
       repo_branch:
         description: '源代码仓库分支'
         default: 'openwrt-24.10-6.6'
-  schedule:
-    - cron: '0 7 * * 5'  # 每周五07:00 UTC（北京时间15:00）
 
 permissions:
   contents: write
@@ -126,6 +124,7 @@ jobs:
         run: |
           echo "device_code=${{ matrix.device_model }}" >> $GITHUB_ENV
 
+      - uses: jlumbroso/free-disk-space@main
       - uses: actions/checkout@v4
 
       - name: 初始化环境
