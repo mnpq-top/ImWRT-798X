@@ -1,3 +1,4 @@
 cd openwrt
-git checkout ee09cf9faf7d149e3d1be11453ac88d3c6e891c7
+# Commits on Nov 7, 2025
+git checkout 8f9ee218f92356a856a98e4bac95ef399bd0c477
 cd ../
