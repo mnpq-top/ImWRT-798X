@@ -28,8 +28,6 @@ CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_docker-compose=y
 CONFIG_PACKAGE_dockerd=y
 
-CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
-
 CONFIG_PACKAGE_luci-proto-wireguard=y
 
 CONFIG_PACKAGE_mosquitto-ssl=y
