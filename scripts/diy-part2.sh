@@ -24,6 +24,8 @@ cat <<EOF >> .config
 
 CONFIG_PACKAGE_nano=y
 
+CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
+
 CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_docker-compose=y
 CONFIG_PACKAGE_dockerd=y
