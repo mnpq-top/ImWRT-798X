@@ -23,6 +23,37 @@ fi
 # 预装 OpenClash（已注释，保持不变）
 # echo "CONFIG_PACKAGE_luci-app-openclash=y" >> .config
 
+cat <<EOF >> .config
+
+CONFIG_PACKAGE_nano=y
+
+CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
+
+CONFIG_PACKAGE_docker=y
+CONFIG_PACKAGE_docker-compose=y
+CONFIG_PACKAGE_dockerd=y
+
+CONFIG_PACKAGE_luci-proto-wireguard=y
+
+CONFIG_PACKAGE_mosquitto-ssl=y
+
+CONFIG_PACKAGE_adguardhome=y
+
+CONFIG_PACKAGE_cloudflared=y
+CONFIG_PACKAGE_luci-app-cloudflared=y
+CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
+
+CONFIG_PACKAGE_omcproxy=y
+
+CONFIG_PACKAGE_rtp2httpd=y
+CONFIG_PACKAGE_luci-app-rtp2httpd=y
+CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
+
+CONFIG_PACKAGE_luci-app-wol=y
+CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
+
+EOF
+
 # 删除 package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
 rm -f package/mtk/drivers/mt_wifi/files/mt7981-default-eeprom/e2p
 if [ $? -eq 0 ]; then
