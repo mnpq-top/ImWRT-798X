@@ -9,5 +9,9 @@
 # 文件名: diy-part1.sh
 # 描述: OpenWrt DIY 脚本第一部分 (更新 feeds 之前)
 
+cat <<EOF >>feeds.conf.default
 
+src-git rtp2httpd https://github.com/stackia/rtp2httpd.git
+
+EOF
 
