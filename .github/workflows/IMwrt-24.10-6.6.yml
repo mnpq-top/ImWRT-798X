@@ -12,6 +12,7 @@ on:
         options:
           - cmcc_rax3000m
           - cmcc_rax3000m-emmc
+          - cmcc_rax3000m-emmc-mtk
           - cudy_ap3000-v1
           - cudy_ap3000outdoor-v1
           - cudy_m3000-v1
@@ -47,8 +48,6 @@ on:
       repo_branch:
         description: '源代码仓库分支'
         default: 'openwrt-24.10-6.6'
-  schedule:
-    - cron: '0 7 * * 5'  # 每周五07:00 UTC（北京时间15:00）
 
 permissions:
   contents: write
