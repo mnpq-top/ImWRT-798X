@@ -11,7 +11,6 @@
 
 cat <<EOF >>feeds.conf.default
 
-src-git rtp2httpd https://github.com/stackia/rtp2httpd.git
 
 EOF
 
