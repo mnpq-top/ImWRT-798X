@@ -3,10 +3,6 @@ name: Build ImmortalWrt 25.12
 on:
   workflow_dispatch:
     inputs:
-      device_model:
-        required: true
-        description: '设备代码'
-        default: 'cmcc_rax3000m'
       repo_url:
         required: true
         description: '源代码仓库URL'
@@ -57,9 +53,9 @@ jobs:
             /workdir/openwrt/dl
             /workdir/openwrt/staging_dir/host*
             /workdir/openwrt/staging_dir/toolchain*
-          key: ${{ runner.os }}-openwrt-${{ github.event.inputs.device_model }}-${{ hashFiles('openwrt/include/**') }}
+          key: ${{ runner.os }}-${{ github.event.inputs.repo_branch }}-${{ hashFiles('openwrt/include/**') }}
           restore-keys: |
-            ${{ runner.os }}-openwrt-${{ github.event.inputs.device_model }}-
+            ${{ runner.os }}-${{ github.event.inputs.repo_branch }}-
 
       - name: Download
         run: |
@@ -69,8 +65,6 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           ../scripts/diy-part2.sh
-          sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config || true
-          echo "CONFIG_TARGET_mediatek_filogic_DEVICE_${{ github.event.inputs.device_model }}=y" >> .config
           echo "CONFIG_CCACHE=y" >> .config
           
           make defconfig
