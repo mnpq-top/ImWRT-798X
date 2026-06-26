@@ -1,11 +1,4 @@
 #!/bin/bash
-#
-# 版权所有 (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# 这是一个自由软件，根据 MIT 许可证授权。
-# 详细信息请参见 /LICENSE。
-#
-# https://github.com/P3TERX/Actions-OpenWrt
 
 # 预装
 cat <<EOF >> .config
