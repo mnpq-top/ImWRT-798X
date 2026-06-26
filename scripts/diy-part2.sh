@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# 预装
+sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config || true
 cat <<EOF >> .config
+
+CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y
 
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_cfdisk=y
