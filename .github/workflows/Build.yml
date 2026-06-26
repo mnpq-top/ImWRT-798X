@@ -3,6 +3,18 @@ name: Build ImmortalWrt 25.12
 on:
   workflow_dispatch:
     inputs:
+      device_model:
+        required: true
+        description: '设备代码'
+        default: 'cmcc_rax3000m'
+      repo_url:
+        required: true
+        description: '源代码仓库URL'
+        default: 'https://github.com/chasey-dev/immortalwrt-mt798x-rebase'
+      repo_branch:
+        required: true
+        description: '源代码仓库分支'
+        default: '25.12'
       config_file:
         required: true
         description: '源码下 .config file'
@@ -30,25 +42,51 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
 
-      - name: Build firmware
+      - name: Git
         run: |
+          sudo mkdir -p /workdir && sudo chown $USER:$USER /workdir
           chmod +x scripts/diy-part1.sh scripts/diy-part2.sh
-          # 克隆 25.12 仓库源码
-          git clone https://github.com/tfnhui/immortalwrt-mt798x-25.12.git openwrt
+          git clone --depth 1 ${{ github.event.inputs.repo_url }} -b ${{ github.event.inputs.repo_branch }} openwrt
+          ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+
+      - name: 缓存加速
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.ccache
+            /workdir/openwrt/dl
+            /workdir/openwrt/staging_dir/host*
+            /workdir/openwrt/staging_dir/toolchain*
+          key: ${{ runner.os }}-openwrt-${{ github.event.inputs.device_model }}-${{ hashFiles('openwrt/include/**') }}
+          restore-keys: |
+            ${{ runner.os }}-openwrt-${{ github.event.inputs.device_model }}-${{ hashFiles('openwrt/include/**') }}
+
+      - name: Download
+        run: |
           cd openwrt
           cp ${{ github.event.inputs.config_file }} .config
-
           ../scripts/diy-part1.sh
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           ../scripts/diy-part2.sh
-
+          sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config || true
+          echo "CONFIG_TARGET_mediatek_filogic_DEVICE_${{ github.event.inputs.device_model }}=y" >> .config
+          echo "CONFIG_CCACHE=y" >> .config
+          
           make defconfig
-          make download -j8
-          make -j$(nproc)
+          make download -j8 || make download -j1 V=s
+
+      - name: Build firmware
+        run: |
+          cd openwrt
+          export CCACHE_DIR=$HOME/.ccache
+          ccache -M 3G
+          ccache -z
+          make -j$(nproc) || make -j1 V=s
+          ccache -s
 
           cd openwrt/bin/targets/*/*
-          rm -rf packages
+          rm -rf packages || true
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           
       - name: Upload firmware
@@ -61,15 +99,15 @@ jobs:
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v2
         with:
-          name: "RAX3000M 固件 ${{ steps.date.outputs.date }} #${{ github.run_number }}"
+          name: "${{ github.event.inputs.device_model }} 固件 ${{ steps.date.outputs.date }} #${{ github.run_number }}"
           tag_name: "build-${{ steps.date.outputs.date }}-${{ github.run_number }}"
           body: |
             ## 自动编译固件
             
             - 编译时间：${{ steps.date.outputs.date }}
             - 编译编号：#${{ github.run_number }}
-            - 设备：CMCC RAX3000M (eMMC / NAND)
-            - 内核：6.12（25.12 版本）
+            - 设备：${{ github.event.inputs.device_model }}
+            - 源码：${{ github.event.inputs.repo_url }} - ${{ github.event.inputs.repo_branch }}
           files: ${{ env.FIRMWAREDIR }}/*
           overwrite: true
         env:
