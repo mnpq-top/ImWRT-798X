@@ -20,8 +20,8 @@ jobs:
           chmod +x scripts/diy-part1.sh scripts/diy-part2.sh
           # 克隆 25.12 仓库源码
           git clone https://github.com/tfnhui/immortalwrt-mt798x-25.12.git openwrt
-          cp .config openwrt/
           cd openwrt
+          cp defconfig/mt7981-ax3000.config .config
 
           ../scripts/diy-part1.sh
           ./scripts/feeds update -a
