@@ -11,6 +11,7 @@
 cat <<EOF >> .config
 
 CONFIG_PACKAGE_nano=y
+CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
 CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
