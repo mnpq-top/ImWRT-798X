@@ -85,7 +85,7 @@ jobs:
           make -j$(nproc) || make -j1 V=s
           ccache -s
 
-          cd openwrt/bin/targets/*/*
+          cd /workdir/openwrt/bin/targets/*/*
           rm -rf packages || true
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           
@@ -93,7 +93,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: immortalwrt-25.12-rax3000m-firmware
-          path: openwrt/bin/targets/mediatek/filogic/
+          path: ${{ env.FIRMWAREDIR }}
           if-no-files-found: warn
 
       - name: Create Release and Upload Assets
