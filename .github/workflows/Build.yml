@@ -79,7 +79,7 @@ jobs:
           make -j$(nproc) || make -j1 V=s
           ccache -s
 
-          cd /workdir/openwrt/bin/targets/*/*
+          cd bin/targets/*/*
           rm -rf packages || true
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           
