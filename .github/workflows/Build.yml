@@ -59,7 +59,7 @@ jobs:
             /workdir/openwrt/staging_dir/toolchain*
           key: ${{ runner.os }}-openwrt-${{ github.event.inputs.device_model }}-${{ hashFiles('openwrt/include/**') }}
           restore-keys: |
-            ${{ runner.os }}-openwrt-${{ github.event.inputs.device_model }}-${{ hashFiles('openwrt/include/**') }}
+            ${{ runner.os }}-openwrt-${{ github.event.inputs.device_model }}-
 
       - name: Download
         run: |
