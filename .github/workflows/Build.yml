@@ -74,7 +74,7 @@ jobs:
           echo "CONFIG_CCACHE=y" >> .config
           
           make defconfig
-          make download -j8 || make download -j1 V=s
+          make download -j16 || make download -j1 V=s
 
       - name: Build firmware
         run: |
