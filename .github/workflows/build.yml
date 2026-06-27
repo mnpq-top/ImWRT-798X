@@ -70,11 +70,12 @@ jobs:
       - name: Zip
         run: |
           cd openwrt/bin/targets/*/*
-          ls -ahl
-          [ -d "packages" ] && tar -zcf - packages/ | split -d -b 1g - bin.targets.packages.tar.gz. || true
-          [ -d "/workdir/openwrt/bin/packages" ] && tar -zcf - /workdir/openwrt/bin/packages/ | split -d -b 1g - bin.packages.tar.gz. || true
-          rm -rf packages
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
+          ls -ahl
+          [ -d "packages" ] && tar -zcf - packages/ | split -d -b 1000m - bin.targets.packages.tar.gz. || true
+          [ -d "/workdir/openwrt/bin/packages" ] && tar -zcf - /workdir/openwrt/bin/packages/ | split -d -b 1000m - bin.packages.tar.gz. || true
+          rm -rf packages
+          
           
 
       - name: Create Release and Upload Assets
