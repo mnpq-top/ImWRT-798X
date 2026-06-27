@@ -1,4 +1,9 @@
 #!/bin/bash
+sed -i 's/192.168.1./192.168.0./g' .config
+sed -i 's/CONFIG_TARGET_MULTI_PROFILE=y/CONFIG_TARGET_MULTI_PROFILE=n/' .config
+sed -i '/CONFIG_TARGET_DEVICE_/d' .config
+echo "CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
+echo "CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
 
 cat <<EOF >> .config
 
@@ -31,7 +36,3 @@ CONFIG_PACKAGE_luci-app-wol=y
 CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
 
 EOF
-sed -i 's/CONFIG_TARGET_MULTI_PROFILE=y/CONFIG_TARGET_MULTI_PROFILE=n/' .config || true
-sed -i '/CONFIG_TARGET_DEVICE_/d' .config || true
-echo "CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
-echo "CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
