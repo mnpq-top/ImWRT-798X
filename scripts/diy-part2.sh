@@ -33,4 +33,5 @@ CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
 EOF
 sed -i '/CONFIG_TARGET_MULTI_PROFILE=y/d' .config || true
 sed -i '/CONFIG_TARGET_DEVICE_/d' .config || true
+echo "CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
 echo "CONFIG_TARGET_DEVICE_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
