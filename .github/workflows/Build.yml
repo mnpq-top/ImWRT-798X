@@ -68,6 +68,7 @@ jobs:
           echo "CONFIG_CCACHE=y" >> .config
           
           make defconfig
+          grep -v '#' .config
           make download -j16 || make download -j1 V=s
 
       - name: Build firmware
