@@ -32,3 +32,5 @@ CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
 
 EOF
 
+sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config || true
+echo "CONFIG_TARGET_mediatek_filogic_DEVICE_‎cmcc_rax3000m=y" >> .config
