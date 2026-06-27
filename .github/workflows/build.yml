@@ -72,8 +72,8 @@ jobs:
           cd openwrt/bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           ls -ahl
-          [ -d "packages" ] && tar -zcf - packages/ | split -d -b 1000m - bin.targets.packages.tar.gz. || true
-          [ -d "/workdir/openwrt/bin/packages" ] && tar -zcf - /workdir/openwrt/bin/packages/ | split -d -b 1000m - bin.packages.tar.gz. || true
+          tar -zcf - /workdir/openwrt/bin/targets/packages/ | split -d -b 1000m - bin.targets.packages.tar.gz. || true
+          tar -zcf - /workdir/openwrt/bin/packages/ | split -d -b 1000m - bin.packages.tar.gz. || true
           rm -rf packages
           
           
