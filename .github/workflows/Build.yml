@@ -62,9 +62,11 @@ jobs:
         run: |
           cd openwrt
           make -j$(nproc) || make -j1 V=s
-
-          cd bin/targets/*/*
-          rm -rf packages || true
+      - name: Build firmware
+        run: |
+          cd openwrt/bin/targets/*/*
+          zip -r packages.zipp ./packages && zip -s 1g packages.zipp --out packages.zip && rm -rf packages packages.zipp
+          zip -r kmod.zipp ./kmod && zip -s 1g kmod.zipp --out kmod.zip && rm -rf kmod kmod.zipp
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
 
       - name: Create Release and Upload Assets
