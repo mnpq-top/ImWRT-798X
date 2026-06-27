@@ -82,26 +82,15 @@ jobs:
           cd bin/targets/*/*
           rm -rf packages || true
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
-          
-      - name: Upload firmware
-        uses: actions/upload-artifact@v4
-        with:
-          name: immortalwrt-25.12-rax3000m-firmware
-          path: ${{ env.FIRMWAREDIR }}
-          if-no-files-found: warn
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v2
         with:
-          name: "${{ github.event.inputs.device_model }} 固件 ${{ steps.date.outputs.date }} #${{ github.run_number }}"
+          name: "${{ steps.date.outputs.date }}-${{ github.run_number }}"
           tag_name: "build-${{ steps.date.outputs.date }}-${{ github.run_number }}"
           body: |
-            ## 自动编译固件
-            
-            - 编译时间：${{ steps.date.outputs.date }}
-            - 编译编号：#${{ github.run_number }}
-            - 设备：${{ github.event.inputs.device_model }}
-            - 源码：${{ github.event.inputs.repo_url }} - ${{ github.event.inputs.repo_branch }}
+            ${{ github.event.inputs.repo_url }}
+            ${{ github.event.inputs.repo_branch }}
           files: ${{ env.FIRMWAREDIR }}/*
           overwrite: true
         env:
