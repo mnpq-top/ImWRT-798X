@@ -21,7 +21,7 @@ CONFIG_PACKAGE_luci-proto-wireguard=y
 CONFIG_PACKAGE_mosquitto-ssl=y
 
 CONFIG_PACKAGE_adguardhome=y
-CONFIG_PACKAGE_xray-core=y
+#CONFIG_PACKAGE_xray-core=y
 
 CONFIG_PACKAGE_cloudflared=y
 CONFIG_PACKAGE_luci-app-cloudflared=y
