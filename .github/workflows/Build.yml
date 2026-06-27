@@ -45,18 +45,6 @@ jobs:
           git clone --depth 1 ${{ github.event.inputs.repo_url }} -b ${{ github.event.inputs.repo_branch }} openwrt
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-      - name: Cache
-        uses: actions/cache@v6
-        with:
-          path: |
-            ~/.ccache
-            /workdir/openwrt/dl
-            /workdir/openwrt/staging_dir/host*
-            /workdir/openwrt/staging_dir/toolchain*
-          key: ${{ runner.os }}-${{ github.event.inputs.repo_branch }}-${{ hashFiles('openwrt/include/**') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ github.event.inputs.repo_branch }}-
-
       - name: Download
         run: |
           cd openwrt
@@ -65,7 +53,6 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           ../scripts/diy-part2.sh
-          echo "CONFIG_CCACHE=y" >> .config
           
           make defconfig
           grep -v '#' .config
@@ -74,11 +61,7 @@ jobs:
       - name: Build firmware
         run: |
           cd openwrt
-          export CCACHE_DIR=$HOME/.ccache
-          ccache -M 3G
-          ccache -z
           make -j$(nproc) || make -j1 V=s
-          ccache -s
 
           cd bin/targets/*/*
           rm -rf packages || true
