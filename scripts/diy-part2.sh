@@ -26,7 +26,8 @@ CONFIG_PACKAGE_cloudflared=y
 CONFIG_PACKAGE_luci-app-cloudflared=y
 CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
 
-CONFIG_PACKAGE_omcproxy=y
+CONFIG_PACKAGE_luci-app-samba4=y
+CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y
 
 CONFIG_PACKAGE_rtp2httpd=y
 CONFIG_PACKAGE_luci-app-rtp2httpd=y
@@ -38,7 +39,7 @@ CONFIG_PACKAGE_luci-i18n-arpbind-zh-cn=y
 CONFIG_PACKAGE_luci-app-wol=y
 CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
 
-CONFIG_PACKAGE_luci-app-zerotier=y
-CONFIG_PACKAGE_luci-i18n-zerotier-zh-cn=y
+#CONFIG_PACKAGE_luci-app-zerotier=y
+#CONFIG_PACKAGE_luci-i18n-zerotier-zh-cn=y
 
 EOF
