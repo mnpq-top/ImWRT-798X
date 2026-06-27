@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i 's/CONFIG_TARGET_MULTI_PROFILE=y/CONFIG_TARGET_MULTI_PROFILE=n/' .config
+#sed -i 's/CONFIG_TARGET_MULTI_PROFILE=y/CONFIG_TARGET_MULTI_PROFILE=n/' .config
 sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config
 echo "CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
 
