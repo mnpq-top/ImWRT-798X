@@ -45,7 +45,7 @@ jobs:
           git clone --depth 1 ${{ github.event.inputs.repo_url }} -b ${{ github.event.inputs.repo_branch }} openwrt
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-      - name: Download
+      - name: config
         run: |
           cd openwrt
           cp ${{ github.event.inputs.config_file }} .config
@@ -53,16 +53,17 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           ../scripts/diy-part2.sh
-          
           make defconfig
           grep -v '#' .config
+      - name: Download
+        run: |
           make download -j16 || make download -j1 V=s
 
-      - name: Build firmware
+      - name: Build
         run: |
           cd openwrt
           make -j$(nproc) || make -j1 V=s
-      - name: zip
+      - name: Zip
         run: |
           cd openwrt/bin/targets/*/*
           ls -ahl
