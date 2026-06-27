@@ -9,7 +9,7 @@ cat <<EOF >> .config
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_cfdisk=m
 CONFIG_PACKAGE_kmod-tls=y
-CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=m
+CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
 CONFIG_PACKAGE_docker=m
 CONFIG_PACKAGE_docker-compose=m
