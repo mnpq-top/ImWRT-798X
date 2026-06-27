@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         
       - name: Apt-get
         run: |
@@ -77,7 +77,7 @@ jobs:
           [ -d "/workdir/openwrt/bin/packages" ] && zip -r packages.zipp /workdir/openwrt/bin/packages && zip -s 1g packages.zipp --out bin.packages.zip && rm -rf packages.zipp
 
       - name: Create Release and Upload Assets
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           name: "${{ steps.date.outputs.date }}-${{ github.run_number }}"
           tag_name: "build-${{ steps.date.outputs.date }}-${{ github.run_number }}"
@@ -85,6 +85,6 @@ jobs:
             ${{ github.event.inputs.repo_url }}
             ${{ github.event.inputs.repo_branch }}
           files: ${{ env.FIRMWAREDIR }}/*
-          overwrite: true
+          overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
