@@ -45,7 +45,7 @@ jobs:
           git clone --depth 1 ${{ github.event.inputs.repo_url }} -b ${{ github.event.inputs.repo_branch }} openwrt
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-      - name: 缓存加速
+      - name: Cache
         uses: actions/cache@v4
         with:
           path: |
