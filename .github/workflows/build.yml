@@ -71,8 +71,8 @@ jobs:
         run: |
           cd openwrt/bin/targets/*/*
           ls -ahl
-          [ -d "packages" ] && zip -r packages.zip ./packages && zip -s 1g packages.zip --out bin.targets.packages.zip && rm -rf packages.zip
-          [ -d "/workdir/openwrt/bin/packages" ] && zip -r packages.zip /workdir/openwrt/bin/packages && zip -s 1g packages.zip --out bin.packages.zip && rm -rf packages.zip
+          [ -d "packages" ] && tar -zcf - packages/ | split -d -b 1g - bin.targets.packages.tar.gz. || true
+          [ -d "/workdir/openwrt/bin/packages" ] && tar -zcf - /workdir/openwrt/bin/packages/ | split -d -b 1g - bin.packages.tar.gz. || true
           rm -rf packages
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           
