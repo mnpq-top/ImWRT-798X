@@ -31,8 +31,8 @@ CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y
 
 CONFIG_PACKAGE_rtp2httpd=y
-CONFIG_PACKAGE_luci-app-rtp2httpd=y
-CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
+#CONFIG_PACKAGE_luci-app-rtp2httpd=y
+#CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
 
 CONFIG_PACKAGE_luci-app-arpbind=y
 CONFIG_PACKAGE_luci-i18n-arpbind-zh-cn=y
