@@ -13,7 +13,7 @@ on:
         default: '25.12'
       config_file:
         required: true
-        description: '源码下 .config file'
+        description: '本仓库下 .config file'
         default: '.config'
 jobs:
   build:
@@ -73,7 +73,7 @@ jobs:
       - name: Zip
         run: |
           cd openwrt/
-          tar -zcf - bin/ | split -d -b 1000m - openwrt.bin.tar.gz. || true
+          tar -zcvf - bin/ | split -d -b 1000m - openwrt.bin.tar.gz. || true
           cd bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           rm -rf packages
