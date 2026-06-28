@@ -88,6 +88,3 @@ jobs:
           files: |
             ${{ env.FIRMWAREDIR }}/*
             /workdir/openwrt/openwrt.bin.tar.gz.*
-          overwrite_files: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
