@@ -6,9 +6,11 @@ sed -i 's/="192.168.1./="192.168.0./g' .config
 
 cat <<EOF >> .config
 
+CONFIG_SDK=y
 CONFIG_PACKAGE_nano=y
-#CONFIG_PACKAGE_cfdisk=y
+CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
+
 CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
 CONFIG_PACKAGE_docker=y
