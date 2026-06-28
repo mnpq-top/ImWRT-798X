@@ -69,14 +69,13 @@ jobs:
           cd openwrt
           make -j$(nproc) || make -j1 V=s
           
-      - name: Zip
+      - name: tar
         run: |
-          cd openwrt/
-          tar -zcvf - /workdir/openwrt/bin/ | split -d -b 1000m - openwrt.bin.tar.gz. || true
-          cd bin/targets/*/*
+          cd openwrt/bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
+          tar -zcvf - /workdir/openwrt/bin/packages/ | split -d -b 500m - openwrt.bin.packages.tar.gz. || true
+          tar -zcvf - packages/ | split -d -b 500m - packages.tar.gz. || true
           rm -rf packages
-          mv /workdir/openwrt/openwrt.bin.tar.gz.* -t ./ || true
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v3
