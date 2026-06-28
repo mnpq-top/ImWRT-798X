@@ -55,8 +55,8 @@ CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
 #CONFIG_PACKAGE_luci-app-rtp2httpd=y
 #CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
 
-CONFIG_PACKAGE_luci-app-wol=y
-CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
+#CONFIG_PACKAGE_luci-app-wol=y
+#CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
 
 CONFIG_PACKAGE_luci-app-eqos-mtk=y
 CONFIG_PACKAGE_luci-i18n-eqos-mtk-zh-cn=y
