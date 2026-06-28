@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sed -i 's/="192.168.1./="192.168.0./g' .config
 #sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config
 #echo "CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
 
