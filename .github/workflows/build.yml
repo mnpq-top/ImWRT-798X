@@ -58,7 +58,6 @@ jobs:
         run: |
           cd openwrt
           make oldconfig
-          grep -v '#' .config
           
       - name: Download
         run: |
@@ -73,7 +72,7 @@ jobs:
       - name: Zip
         run: |
           cd openwrt/
-          tar -zcvf - bin/ | split -d -b 1000m - openwrt.bin.tar.gz. || true
+          tar -zcvf - /workdir/openwrt/bin/ | split -d -b 1000m - openwrt.bin.tar.gz. || true
           cd bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           rm -rf packages
