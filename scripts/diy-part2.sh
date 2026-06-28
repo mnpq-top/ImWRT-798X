@@ -11,15 +11,18 @@ CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
 CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
-CONFIG_PACKAGE_docker=m
-CONFIG_PACKAGE_docker-compose=m
-CONFIG_PACKAGE_dockerd=m
+CONFIG_PACKAGE_docker=y
+CONFIG_PACKAGE_docker-compose=y
+CONFIG_PACKAGE_dockerd=y
 
 CONFIG_PACKAGE_luci-proto-wireguard=y
 
 CONFIG_PACKAGE_mosquitto-ssl=y
 
-CONFIG_PACKAGE_adguardhome=y
+#CONFIG_PACKAGE_adguardhome=y
+CONFIG_PACKAGE_https-dns-proxy=y
+CONFIG_PACKAGE_luci-app-https-dns-proxy=y
+CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
 
 CONFIG_PACKAGE_cloudflared=y
 CONFIG_PACKAGE_luci-app-cloudflared=y
