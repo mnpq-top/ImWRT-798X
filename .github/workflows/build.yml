@@ -57,7 +57,7 @@ jobs:
       - name: Config
         run: |
           cd openwrt
-          make oldconfig
+          make olddefconfig
           grep -v '#' .config
           
       - name: Download
