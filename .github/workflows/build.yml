@@ -53,11 +53,13 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           ../scripts/diy-part2.sh
+          
       - name: Config
         run: |
           cd openwrt
           make defconfig
           grep -v '#' .config
+          
       - name: Download
         run: |
           cd openwrt
@@ -67,16 +69,14 @@ jobs:
         run: |
           cd openwrt
           make -j$(nproc) || make -j1 V=s
+          
       - name: Zip
         run: |
-          cd openwrt/bin/targets/*/*
+          cd openwrt/
+          tar -zcf - bin/ | split -d -b 1000m - openwrt.bin.tar.gz. || true
+          cd bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
-          ls -ahl
-          tar -zcf - /workdir/openwrt/bin/targets/packages/ | split -d -b 1000m - bin.targets.packages.tar.gz. || true
-          tar -zcf - /workdir/openwrt/bin/packages/ | split -d -b 1000m - bin.packages.tar.gz. || true
           rm -rf packages
-          
-          
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v3
@@ -86,7 +86,9 @@ jobs:
           body: |
             ${{ github.event.inputs.repo_url }}
             ${{ github.event.inputs.repo_branch }}
-          files: ${{ env.FIRMWAREDIR }}/*
+          files: |
+            ${{ env.FIRMWAREDIR }}/*
+            /workdir/openwrt/openwrt.bin.tar.gz.*
           overwrite_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
