@@ -13,8 +13,8 @@ on:
         default: '25.12'
       config_file:
         required: true
-        description: '本仓库下 .config file'
-        default: '.config'
+        description: '源码下 .config file'
+        default: 'defconfig/mt7981-ax3000.config'
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -47,8 +47,8 @@ jobs:
 
       - name: Feeds
         run: |
-          cp ${{ github.event.inputs.config_file }} openwrt/.config
           cd openwrt
+          cp ${{ github.event.inputs.config_file }} .config
           ../scripts/diy-part1.sh
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -57,7 +57,7 @@ jobs:
       - name: Config
         run: |
           cd openwrt
-          make defconfig
+          make olddefconfig
           grep -v '#' .config
           
       - name: Download
