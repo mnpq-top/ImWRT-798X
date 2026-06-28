@@ -14,6 +14,11 @@ cat <<EOF >> .config
 CONFIG_PACKAGE_nano=y
 #CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
+CONFIG_PACKAGE_kmod-fs-autofs4=y
+CONFIG_PACKAGE_kmod-fs-btrfs=y
+CONFIG_PACKAGE_kmod-fs-exfat=y
+CONFIG_PACKAGE_kmod-fs-ext4=y
+CONFIG_PACKAGE_kmod-fs-f2fs=y
 CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
 CONFIG_PACKAGE_docker=y
