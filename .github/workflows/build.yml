@@ -76,6 +76,7 @@ jobs:
           cd bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           rm -rf packages
+          mv /workdir/openwrt/openwrt.bin.tar.gz.* -t ./ || true
 
       - name: Create Release and Upload Assets
         uses: softprops/action-gh-release@v3
@@ -85,6 +86,5 @@ jobs:
           body: |
             ${{ github.event.inputs.repo_url }}
             ${{ github.event.inputs.repo_branch }}
-          files: |
+          files:
             ${{ env.FIRMWAREDIR }}/*
-            /workdir/openwrt/openwrt.bin.tar.gz.*
