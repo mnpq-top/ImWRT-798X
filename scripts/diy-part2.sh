@@ -9,11 +9,11 @@ cat <<EOF >> .config
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
-#CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
+CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
-CONFIG_PACKAGE_docker=y
-CONFIG_PACKAGE_docker-compose=y
-CONFIG_PACKAGE_dockerd=y
+CONFIG_PACKAGE_docker=m
+CONFIG_PACKAGE_docker-compose=m
+CONFIG_PACKAGE_dockerd=m
 
 CONFIG_PACKAGE_luci-proto-wireguard=y
 
