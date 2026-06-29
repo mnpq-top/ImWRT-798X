@@ -71,9 +71,10 @@ jobs:
           
       - name: tar
         run: |
+          ls -ahl openwrt/bin/
           cd openwrt/bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
-          tar -zcvf - /workdir/openwrt/bin/packages/ | split -d -b 500m - openwrt.bin.packages.tar.gz. || true
+          tar -zcvf - ../../../packages/ | split -d -b 500m - openwrt.bin.packages.tar.gz. || true
           tar -zcvf - packages/ | split -d -b 500m - packages.tar.gz. || true
           rm -rf packages
 
