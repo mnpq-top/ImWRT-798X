@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sed -i 's/="192.168.1./="192.168.0./g' .config
 #sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config
 #echo "CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
 
@@ -10,6 +9,9 @@ CONFIG_SDK=y
 CONFIG_PACKAGE_nano=y
 #CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
+
+CONFIG_PACKAGE_kmod-usb-net=y
+CONFIG_PACKAGE_kmod-usb-net-rndis=y
 
 CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_docker-compose=y
