@@ -12,6 +12,7 @@ CONFIG_PACKAGE_kmod-tls=y
 
 CONFIG_PACKAGE_kmod-usb-net=y
 CONFIG_PACKAGE_kmod-usb-net-rndis=y
+#CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
 CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_docker-compose=y
