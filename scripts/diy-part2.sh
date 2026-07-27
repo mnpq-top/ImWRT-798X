@@ -14,9 +14,9 @@ CONFIG_PACKAGE_kmod-tls=y
 #CONFIG_PACKAGE_kmod-ipt-nat6=y
 
 CONFIG_PACKAGE_kmod-usb3=y
-CONFIG_PACKAGE_kmod-usb-net=m
-CONFIG_PACKAGE_kmod-usb-net-rndis=m
-CONFIG_PACKAGE_kmod-usb-net-rtl8152=m
+CONFIG_PACKAGE_kmod-usb-net=y
+CONFIG_PACKAGE_kmod-usb-net-rndis=y
+CONFIG_PACKAGE_kmod-usb-net-rtl8152=y
 CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=m
 
 CONFIG_PACKAGE_docker=y
