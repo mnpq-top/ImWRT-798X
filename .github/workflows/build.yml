@@ -36,7 +36,7 @@ jobs:
           
       - name: Date
         id: date
-        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+        run: echo "date=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
 
       - name: Git
         run: |
