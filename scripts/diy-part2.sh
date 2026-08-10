@@ -12,16 +12,16 @@ CONFIG_PACKAGE_kmod-tls=y
 
 #CONFIG_PACKAGE_kmod-nf-nat6=y
 #CONFIG_PACKAGE_kmod-ipt-nat6=y
-CONFIG_PACKAGE_kmod-bonding=y
-CONFIG_PACKAGE_luci-app-bonding=y
+#CONFIG_PACKAGE_kmod-bonding=y
+#CONFIG_PACKAGE_luci-app-bonding=y
 
 CONFIG_PACKAGE_kmod-usb2=y
 CONFIG_PACKAGE_kmod-usb3=y
 CONFIG_PACKAGE_kmod-usb-net=y
 CONFIG_PACKAGE_kmod-usb-net-rndis=y
-CONFIG_PACKAGE_r8152-firmware=y
+#CONFIG_PACKAGE_r8152-firmware=y
 #CONFIG_PACKAGE_kmod-usb-net-rtl8152=y
-CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
+#CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
 
 CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_docker-compose=y
