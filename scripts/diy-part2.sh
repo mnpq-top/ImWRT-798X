@@ -15,6 +15,7 @@ CONFIG_PACKAGE_kmod-tls=y
 CONFIG_PACKAGE_kmod-bonding=y
 CONFIG_PACKAGE_luci-app-bonding=y
 
+CONFIG_PACKAGE_kmod-usb2=y
 CONFIG_PACKAGE_kmod-usb3=y
 CONFIG_PACKAGE_kmod-usb-net=y
 CONFIG_PACKAGE_kmod-usb-net-rndis=y
