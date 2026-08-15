@@ -34,9 +34,9 @@ CONFIG_PACKAGE_https-dns-proxy=y
 CONFIG_PACKAGE_luci-app-https-dns-proxy=y
 CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
 
-CONFIG_PACKAGE_cloudflared=y
-CONFIG_PACKAGE_luci-app-cloudflared=y
-CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
+#CONFIG_PACKAGE_cloudflared=y
+#CONFIG_PACKAGE_luci-app-cloudflared=y
+#CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
 
 #CONFIG_PACKAGE_luci-app-wol=y
 #CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
