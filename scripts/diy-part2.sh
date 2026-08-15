@@ -10,8 +10,8 @@ CONFIG_PACKAGE_nano=y
 #CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
 
-CONFIG_PACKAGE_kmod-nf-nat6=y
-CONFIG_PACKAGE_kmod-ipt-nat6=y
+#CONFIG_PACKAGE_kmod-nf-nat6=y
+#CONFIG_PACKAGE_kmod-ipt-nat6=y
 #CONFIG_PACKAGE_kmod-bonding=y
 #CONFIG_PACKAGE_luci-app-bonding=y
 
