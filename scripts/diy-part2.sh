@@ -36,6 +36,9 @@ CONFIG_PACKAGE_cloudflared=y
 CONFIG_PACKAGE_luci-app-cloudflared=y
 CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
 
+CONFIG_PACKAGE_luci-app-rtp2httpd=y
+CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
+
 CONFIG_PACKAGE_luci-app-passwall=y
 
 #
