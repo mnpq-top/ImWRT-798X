@@ -56,6 +56,8 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin is not set
 # end of Configuration
 
+CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
+
 CONFIG_PACKAGE_luci-app-eqos-mtk=y
 CONFIG_PACKAGE_luci-i18n-eqos-mtk-zh-cn=y
 
