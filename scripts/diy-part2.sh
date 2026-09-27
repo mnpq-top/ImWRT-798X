@@ -6,46 +6,16 @@
 cat <<EOF >> .config
 
 CONFIG_SDK=y
-CONFIG_PACKAGE_nano=y
-#CONFIG_PACKAGE_cfdisk=y
-CONFIG_PACKAGE_kmod-tls=y
 
-#CONFIG_PACKAGE_ebtables-nft=y
-#CONFIG_PACKAGE_kmod-nf-nat6=y
-#CONFIG_PACKAGE_kmod-ipt-nat6=y
-#CONFIG_PACKAGE_kmod-bonding=y
-#CONFIG_PACKAGE_luci-proto-bonding=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
-
-#CONFIG_PACKAGE_kmod-usb2=y
-#CONFIG_PACKAGE_kmod-usb3=y
-#CONFIG_PACKAGE_kmod-usb-net=y
-#CONFIG_PACKAGE_kmod-usb-net-rndis=y
-#CONFIG_PACKAGE_r8152-firmware=y
-#CONFIG_PACKAGE_kmod-usb-net-rtl8152=y
-#CONFIG_PACKAGE_kmod-usb-net-rtl8152-vendor=y
-
-#CONFIG_PACKAGE_docker=y
-#CONFIG_PACKAGE_docker-compose=y
-#CONFIG_PACKAGE_dockerd=y
 
 CONFIG_PACKAGE_https-dns-proxy=y
 CONFIG_PACKAGE_luci-app-https-dns-proxy=y
 CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
 
-#CONFIG_PACKAGE_cloudflared=y
-#CONFIG_PACKAGE_luci-app-cloudflared=y
-#CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
-
 CONFIG_PACKAGE_luci-app-iptv=y
 CONFIG_PACKAGE_luci-i18n-iptv-zh-cn=y
 
-#CONFIG_PACKAGE_luci-app-rtp2httpd=y
-#CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
-
 CONFIG_PACKAGE_luci-app-airoha-npu=y
-
-#CONFIG_PACKAGE_luci-app-eqos-mtk=y
-#CONFIG_PACKAGE_luci-i18n-eqos-mtk-zh-cn=y
 
 EOF
