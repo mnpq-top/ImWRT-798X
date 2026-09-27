@@ -39,28 +39,6 @@ CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
 CONFIG_PACKAGE_luci-app-rtp2httpd=y
 CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
 
-CONFIG_PACKAGE_luci-app-passwall=y
-
-#
-# Configuration
-#
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadow_TLS is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata is not set
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geoview=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin is not set
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin is not set
-# end of Configuration
-
-CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
-
 #CONFIG_PACKAGE_luci-app-eqos-mtk=y
 #CONFIG_PACKAGE_luci-i18n-eqos-mtk-zh-cn=y
 
