@@ -10,7 +10,7 @@ CONFIG_PACKAGE_nano=y
 #CONFIG_PACKAGE_cfdisk=y
 CONFIG_PACKAGE_kmod-tls=y
 
-CONFIG_PACKAGE_ebtables-nft=y
+#CONFIG_PACKAGE_ebtables-nft=y
 #CONFIG_PACKAGE_kmod-nf-nat6=y
 #CONFIG_PACKAGE_kmod-ipt-nat6=y
 #CONFIG_PACKAGE_kmod-bonding=y
@@ -37,10 +37,11 @@ CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
 #CONFIG_PACKAGE_luci-app-cloudflared=y
 #CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
 
-CONFIG_PACKAGE_xray-core=y
+CONFIG_PACKAGE_luci-app-iptv=y
+CONFIG_PACKAGE_luci-i18n-iptv-zh-cn=y
 
-CONFIG_PACKAGE_luci-app-rtp2httpd=y
-CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
+#CONFIG_PACKAGE_luci-app-rtp2httpd=y
+#CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
 
 #CONFIG_PACKAGE_luci-app-eqos-mtk=y
 #CONFIG_PACKAGE_luci-i18n-eqos-mtk-zh-cn=y
