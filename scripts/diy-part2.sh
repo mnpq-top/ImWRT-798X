@@ -37,6 +37,8 @@ CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
 #CONFIG_PACKAGE_luci-app-cloudflared=y
 #CONFIG_PACKAGE_luci-i18n-cloudflared-zh-cn=y
 
+CONFIG_PACKAGE_xray-core=y
+
 CONFIG_PACKAGE_luci-app-rtp2httpd=y
 CONFIG_PACKAGE_luci-i18n-rtp2httpd-zh-cn=y
 
