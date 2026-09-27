@@ -18,4 +18,15 @@ CONFIG_PACKAGE_luci-i18n-iptv-zh-cn=y
 
 CONFIG_PACKAGE_luci-app-airoha-npu=y
 
+CONFIG_PACKAGE_airoha-en7581-npu-firmware=y
+CONFIG_PACKAGE_airoha-en8811h-firmware=y
+#
+# PON
+#
+CONFIG_PACKAGE_kmod-airoha-en7572=y
+CONFIG_PACKAGE_kmod-airoha-pon-frontend=y
+CONFIG_PACKAGE_kmod-airoha-xpon=y
+CONFIG_PACKAGE_airoha-pon-debug=y
+CONFIG_PACKAGE_airoha-ponctl=y
+CONFIG_PACKAGE_airoha-pond=y
 EOF
