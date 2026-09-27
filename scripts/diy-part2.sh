@@ -17,6 +17,7 @@ CONFIG_PACKAGE_luci-app-iptv=y
 CONFIG_PACKAGE_luci-i18n-iptv-zh-cn=y
 
 CONFIG_PACKAGE_luci-app-airoha-npu=y
+CONFIG_PACKAGE_luci-i18n-airoha-npu-zh-cn=y
 
 CONFIG_PACKAGE_airoha-en7581-npu-firmware=y
 CONFIG_PACKAGE_airoha-en8811h-firmware=y
