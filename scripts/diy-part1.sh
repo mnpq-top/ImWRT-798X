@@ -5,3 +5,4 @@ cat <<EOF >>feeds.conf.default
 
 EOF
 
+git clone https://github.com/rchen14b/luci-app-airoha-npu.git package/luci-app-airoha-npu
