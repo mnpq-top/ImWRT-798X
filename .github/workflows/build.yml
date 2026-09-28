@@ -1,4 +1,4 @@
-name: Build ImmortalWrt
+name: Build ponWrt
 
 on:
   workflow_dispatch:
@@ -6,15 +6,15 @@ on:
       repo_url:
         required: true
         description: '源代码仓库URL'
-        default: 'https://github.com/chasey-dev/immortalwrt-mt798x-rebase'
+        default: 'https://github.com/pbs05/ponwrt'
       repo_branch:
         required: true
         description: '源代码仓库分支'
-        default: '25.12'
+        default: 'master'
       config_file:
         required: true
         description: '.config file'
-        default: '.config'
+        default: 'openwrt/configs/an7581.config'
 jobs:
   build:
     runs-on: ubuntu-24.04
