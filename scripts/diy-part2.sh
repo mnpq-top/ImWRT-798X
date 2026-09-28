@@ -5,7 +5,7 @@
 
 cat <<EOF >> .config
 
-CONFIG_TARGET_airoha_an7581_DEVICE_fiberhome_hg5382a=y
+#CONFIG_TARGET_airoha_an7581_DEVICE_fiberhome_hg5382a=y
 #CONFIG_SDK=y
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
@@ -17,18 +17,4 @@ CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
 CONFIG_PACKAGE_luci-app-airoha-npu=y
 CONFIG_PACKAGE_luci-i18n-airoha-npu-zh-cn=y
 
-CONFIG_PACKAGE_kmod-br-netfilter=y
-CONFIG_PACKAGE_kmod-libphy=y
-CONFIG_PACKAGE_kmod-phy-airoha-en8811h=y
-CONFIG_PACKAGE_airoha-en7581-npu-firmware=y
-CONFIG_PACKAGE_airoha-en8811h-firmware=y
-#
-# PON
-#
-CONFIG_PACKAGE_kmod-airoha-en7572=y
-CONFIG_PACKAGE_kmod-airoha-pon-frontend=y
-CONFIG_PACKAGE_kmod-airoha-xpon=y
-CONFIG_PACKAGE_airoha-pon-debug=y
-CONFIG_PACKAGE_airoha-ponctl=y
-CONFIG_PACKAGE_airoha-pond=y
 EOF
