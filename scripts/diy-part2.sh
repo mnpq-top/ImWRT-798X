@@ -5,7 +5,7 @@
 
 cat <<EOF >> .config
 
-CONFIG_SDK=y
+#CONFIG_SDK=y
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
 
