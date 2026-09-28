@@ -5,7 +5,6 @@
 
 cat <<EOF >> .config
 
-#CONFIG_TARGET_airoha_an7581_DEVICE_fiberhome_hg5382a=y
 #CONFIG_SDK=y
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
