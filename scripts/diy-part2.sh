@@ -10,6 +10,6 @@ CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
 
 CONFIG_PACKAGE_luci-app-airoha-npu=y
-CONFIG_PACKAGE_luci-i18n-airoha-npu-zh-cn=y
+CONFIG_PACKAGE_luci-app-airoha-flowsense=y
 
 EOF
