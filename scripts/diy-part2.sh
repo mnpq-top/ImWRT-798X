@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#sed -i '/CONFIG_TARGET_mediatek_filogic_DEVICE_/d' .config
-#echo "CONFIG_TARGET_mediatek_filogic_DEVICE_cmcc_rax3000m=y" >> .config
-
 cat <<EOF >> .config
 
 #CONFIG_SDK=y
