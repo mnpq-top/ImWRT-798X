@@ -13,3 +13,5 @@ CONFIG_PACKAGE_luci-app-airoha-npu=y
 CONFIG_PACKAGE_luci-app-airoha-flowsense=y
 
 EOF
+
+[ -f configs/release.config ] && cat configs/release.config >> .config
