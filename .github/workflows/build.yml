@@ -95,5 +95,6 @@ jobs:
           body: |
             ${{ github.event.inputs.repo_url }}
             ${{ github.event.inputs.repo_branch }}
+            ${{ github.event.inputs.config_file }}
           files:
             ${{ env.FIRMWAREDIR }}/*
