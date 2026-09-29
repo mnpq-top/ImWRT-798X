@@ -62,6 +62,7 @@ jobs:
 
       - uses: klever1988/cachewrtbuild@main
         with:
+          clean: true
           ccache: true
           mixkey: ${{ env.CONFIG_TARGET_ARCH_PACKAGES }}
           prefix: 'openwrt'
