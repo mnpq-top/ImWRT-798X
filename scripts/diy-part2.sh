@@ -9,11 +9,6 @@ cat <<EOF >> .config
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
 
-CONFIG_PACKAGE_kmod-nf-flow=y
-CONFIG_PACKAGE_kmod-nft-offload=y
-CONFIG_PACKAGE_kmod-nf-conntrack-bridge=y
-CONFIG_PACKAGE_kmod-br-netfilter=y
-
 CONFIG_PACKAGE_https-dns-proxy=y
 CONFIG_PACKAGE_luci-app-https-dns-proxy=y
 CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
