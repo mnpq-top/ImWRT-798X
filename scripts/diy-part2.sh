@@ -9,10 +9,6 @@ cat <<EOF >> .config
 CONFIG_PACKAGE_nano=y
 CONFIG_PACKAGE_luci-proto-wireguard=y
 
-CONFIG_PACKAGE_https-dns-proxy=y
-CONFIG_PACKAGE_luci-app-https-dns-proxy=y
-CONFIG_PACKAGE_luci-i18n-https-dns-proxy-zh-cn=y
-
 CONFIG_PACKAGE_luci-app-airoha-npu=y
 CONFIG_PACKAGE_luci-i18n-airoha-npu-zh-cn=y
 
