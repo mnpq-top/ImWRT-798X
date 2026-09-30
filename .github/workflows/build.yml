@@ -44,6 +44,13 @@ jobs:
           chmod +x scripts/diy-part1.sh scripts/diy-part2.sh
           git clone ${{ github.event.inputs.repo_url }} -b ${{ github.event.inputs.repo_branch }} openwrt
           ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+          cat <<EOF >openwrt/release.body
+          ${{ github.event.inputs.repo_url }}
+          ${{ github.event.inputs.repo_branch }}
+          ${{ github.event.inputs.config_file }}
+          EOF
+          cd openwrt
+          git log -n 1 --oneline >> release.body || true
 
       - name: Feeds
         run: |
@@ -78,12 +85,7 @@ jobs:
           
       - name: tar
         run: |
-          cat <<EOF >openwrt/release.body
-          ${{ github.event.inputs.repo_url }}
-          ${{ github.event.inputs.repo_branch }}
-          ${{ github.event.inputs.config_file }}
-          EOF
-          tree openwrt/bin/ >> openwrt/release.body
+          tree openwrt/bin/ #>> openwrt/release.body
           cd openwrt/bin/targets/*/*
           echo "FIRMWAREDIR=$PWD" >> $GITHUB_ENV
           tar -zcvf - ../../../packages/ | split -d -b 500m - openwrt.bin.packages.tar.gz. || true
